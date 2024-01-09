@@ -76,18 +76,14 @@
 <p>Créer un champ de saisie permettant à l'utilisateur de choisir l'année de sa recherche.</p>
 
 <form action="#" method="post">
-    <label for="inputValeur">Choisir une année : </label>
-    <input type="text" id="inputValeur" name="valeur">
-    <input type="submit" value="Afficher">
+    <p>Saisir une chaine (Du texte avec 6 caractères minimum) : <input type="text" id="inputValeur" name="chaine">
+    <p><input type="submit" value="Afficher">
 </form>
-
-<%-- Récupération de la valeur saisie par l'utilisateur --%>
-<% String valeur = request.getParameter("valeur"); %>
-
-<h2>Exercice 3 : Modification du titre du film</h2>
-<p>Créer un fichier permettant de modifier le titre d'un film sur la base de son ID (ID choisi par l'utilisateur)</p>
+</form>
 <% 
-sql = "SELECT idFilm, titre, année FROM Film WHERE année = valeur";
+String chaine = request.getParameter("chaine");
+
+sql = "SELECT idFilm, titre, année FROM Film WHERE année = chaine";
         pstmt = conn.prepareStatement(sql);
         rs = pstmt.executeQuery();
 
@@ -106,6 +102,9 @@ sql = "SELECT idFilm, titre, année FROM Film WHERE année = valeur";
         pstmt.close();
         conn.close();
 %>
+
+<h2>Exercice 3 : Modification du titre du film</h2>
+<p>Créer un fichier permettant de modifier le titre d'un film sur la base de son ID (ID choisi par l'utilisateur)</p>
 
 <h2>Exercice 4 : La valeur maximum</h2>
 <p>Créer un formulaire pour saisir un nouveau film dans la base de données</p>
