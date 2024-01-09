@@ -84,7 +84,7 @@
 String chaine = request.getParameter("chaine");
 
 if (chaine != null && !chaine.isEmpty()) {
-    valeur = Integer.parseInt(valeur);
+    chaine = Integer.parseInt(valeur);
 sql = "SELECT idFilm, titre, année FROM Film WHERE année = chaine";
         pstmt = conn.prepareStatement(sql);
         rs = pstmt.executeQuery();
