@@ -34,9 +34,9 @@
         }
 
 
-        String sql = "SELECT idFilm, titre, année FROM Film WHERE année >= 2000 and année <= 2015";
-        PreparedStatement pstmt = conn.prepareStatement(sql);
-        ResultSet rs = pstmt.executeQuery();
+        sql = "SELECT idFilm, titre, année FROM Film WHERE année >= 2000 and année <= 2015";
+        pstmt = conn.prepareStatement(sql);
+        rs = pstmt.executeQuery();
 
         // Afficher les résultats (à adapter selon vos besoins)
         while (rs.next()) {
