@@ -84,8 +84,6 @@
 String chaine = request.getParameter("chaine");
 
 if (chaine != null && !chaine.isEmpty()) {
-    try {
-
 sql = "SELECT idFilm, titre, année FROM Film WHERE année = chaine";
         pstmt = conn.prepareStatement(sql);
         rs = pstmt.executeQuery();
@@ -101,14 +99,12 @@ sql = "SELECT idFilm, titre, année FROM Film WHERE année = chaine";
         }
 
     
-    }}
-    catch (SQLException e) {
-        e.printStackTrace();
-    } 
+    
     // Fermer les ressources 
         rs.close();
         pstmt.close();
         conn.close();
+    }
 %>
 
 <h2>Exercice 3 : Modification du titre du film</h2>
